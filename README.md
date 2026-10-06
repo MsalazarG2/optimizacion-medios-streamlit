@@ -1,12 +1,8 @@
 # 📊 Optimización de Medios Publicitarios
 
-Aplicación desarrollada con **Python, Streamlit y PuLP** para resolver un problema de optimización de un plan de medios con presupuesto limitado.
+Aplicación de programación lineal entera binaria desarrollada con Python, Streamlit y PuLP.
 
-## Problema
-
-Se deben seleccionar canales publicitarios para maximizar el impacto sin superar el presupuesto.
-
-Datos iniciales:
+## Datos iniciales
 
 | Canal | Costo | Impacto |
 |---|---:|---:|
@@ -17,30 +13,33 @@ Datos iniciales:
 
 Presupuesto inicial: **9**
 
-La solución óptima inicial es:
+### Solución óptima
 
 - Radio
 - Redes sociales
 - Prensa
 
 Costo total: **9**
-
 Impacto total: **15**
 
-## Ejecutar localmente
+## Ejecutar
 
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## Desplegar en Streamlit Community Cloud
+## Streamlit Community Cloud
 
-1. Sube `app.py` y `requirements.txt` a un repositorio de GitHub.
-2. Entra a Streamlit Community Cloud.
-3. Conecta tu cuenta de GitHub.
-4. Selecciona el repositorio.
-5. Selecciona `app.py` como archivo principal.
-6. Pulsa Deploy.
+Sube `app.py`, `requirements.txt` y `README.md` a GitHub y despliega `app.py`.
 
-La aplicación permite modificar el presupuesto, los costos y los impactos desde la interfaz.
+### Compatibilidad
+
+El proyecto usa **PuLP 2.9.0** y la API clásica:
+
+```python
+pulp.LpVariable(...)
+modelo.solve()
+```
+
+No utiliza `add_variable()` ni depende directamente de `PULP_CBC_CMD`, evitando problemas de compatibilidad entre versiones de PuLP.
