@@ -1,4 +1,4 @@
 streamlit
 pandas
 matplotlib
-pulp==4.0.0
+pulp==3.3.0
